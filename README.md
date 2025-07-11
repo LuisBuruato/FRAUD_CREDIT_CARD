@@ -1,89 +1,137 @@
-# 💳 Credit Card Fraud Detection Analysis
+# 📊 Credit Card Fraud Detection
 
-Este proyecto presenta un análisis exploratorio y visual de datos de transacciones de tarjetas de crédito, enfocándose en la detección de fraudes. A continuación se detallan las gráficas generadas y su propósito dentro del análisis.
-
----
-
-## 📊 Visualizaciones
-
-### 1. **Distribución de Clases**
-[🔗 Ver gráfica interactiva: Class Distribution](https://luisburuato.github.io/FRAUD_CREDIT_CARD/class_distribution.html)
-Muestra el desbalance de clases entre transacciones legítimas (0) y fraudulentas (1).
+Este proyecto analiza transacciones de tarjetas de crédito para detectar fraudes utilizando técnicas de análisis exploratorio y modelos de Machine Learning. A continuación se presentan visualizaciones clave generadas durante el análisis.
 
 ---
 
-### 2. **Distribución Temporal de Transacciones**
-![Time Density](images/time_density.png)
-Gráfico de densidad que ilustra la distribución de las transacciones según el tiempo (en segundos). Se comparan las clases fraude y no fraude.
+## 1. Distribución de Clases
+
+<p align="center">
+  <img src="images/class_distribution.png" alt="Class Distribution" width="600"/>
+</p>
+
+> Muestra el desbalance en las clases: 0 = No fraude, 1 = Fraude.
 
 ---
 
-### 3. **Monto Total por Hora**
-![Total Amount per Hour](images/total_amount.png)
-Comparativa del monto total transaccionado por hora entre transacciones normales y fraudulentas.
+## 2. Densidad de Tiempo
+
+<p align="center">
+  <img src="images/time_density.png" alt="Time Density" width="600"/>
+</p>
+
+> Distribución de tiempo de las transacciones para clases fraudulentas y no fraudulentas.
 
 ---
 
-### 4. **Monto Máximo por Hora**
-![Maximum Amount](images/max_amount.png)
-Visualización del valor máximo transaccionado por hora, separando transacciones legítimas y fraudulentas.
+## 3. Monto Total por Hora
+
+<p align="center">
+  <img src="images/total_amount.png" alt="Total Amount per Hour" width="600"/>
+</p>
+
+> Línea de tiempo del monto total de transacciones por hora, separadas por clase.
 
 ---
 
-### 5. **Boxplots del Monto**
-![Boxplot Amount](images/boxplot_amount.png)
-Comparación del monto de las transacciones con y sin valores atípicos, clasificados por tipo de transacción (fraudulenta o no).
+## 4. Monto Máximo por Hora
+
+<p align="center">
+  <img src="images/max_amount.png" alt="Maximum Amount" width="600"/>
+</p>
+
+> Gráfico de línea que representa el monto máximo de transacciones por hora.
 
 ---
 
-### 6. **Fraudes por Tiempo vs Monto**
-![Fraud Scatter](images/fraud_amount.png)
-Dispersión de las transacciones fraudulentas según el tiempo y el monto.
+## 5. Diagrama de Caja (Boxplot) del Monto
+
+<p align="center">
+  <img src="images/boxplot_amount.png" alt="Boxplot Amount" width="600"/>
+</p>
+
+> Boxplot de los montos de transacciones por clase, con y sin outliers.
 
 ---
 
-### 7. **Mapa de Calor de Correlaciones**
-![Correlation Heatmap](images/correlation_heatmap.png)
-Matriz de correlación entre todas las variables numéricas. Útil para entender relaciones entre atributos.
+## 6. Monto de Transacciones Fraudulentas
+
+<p align="center">
+  <img src="images/fraud_amount.png" alt="Fraud Scatter" width="600"/>
+</p>
+
+> Gráfico de dispersión del monto de las transacciones fraudulentas a lo largo del tiempo.
 
 ---
 
-### 8. **Relación entre Variables y Monto**
-![lmplot V20 vs Amount](images/lmplot_v20_amount.png)  
-![lmplot V7 vs Amount](images/lmplot_v7_amount.png)
-Visualización de regresión para analizar la relación entre variables V20/V7 y el monto de transacción.
+## 7. Mapa de Calor de Correlaciones
+
+<p align="center">
+  <img src="images/correlation_heatmap.png" alt="Correlation Heatmap" width="600"/>
+</p>
+
+> Matriz de correlación de todas las variables del dataset.
 
 ---
 
-### 9. **Distribución KDE por Feature**
-![KDE Features](images/kde_features.png)
-Gráfica de densidad para cada variable del dataset comparando fraudes y no fraudes. Ayuda a identificar patrones relevantes.
+## 8. lmplot: V20 vs Amount
+
+<p align="center">
+  <img src="images/lmplot_v20_amount.png" alt="lmplot V20 vs Amount" width="600"/>
+</p>
+
+> Relación entre la variable V20 y el monto, diferenciada por clase.
 
 ---
 
-### 10. **Importancia de Variables (Modelo XGBoost)**
-![XGBoost Feature Importance](images/xgboost_feature_importance.png)
-Importancia de las variables más relevantes según el modelo XGBoost.
+## 9. lmplot: V7 vs Amount
+
+<p align="center">
+  <img src="images/lmplot_v7_amount.png" alt="lmplot V7 vs Amount" width="600"/>
+</p>
+
+> Relación entre la variable V7 y el monto, diferenciada por clase.
 
 ---
 
-### 11. **Matriz de Confusión**
-![Confusion Matrix](images/confusion_matrix.png)
-Evaluación del rendimiento del modelo de clasificación.
+## 10. Distribución KDE de todas las variables
+
+<p align="center">
+  <img src="images/kde_features.png" alt="KDE Features" width="600"/>
+</p>
+
+> Distribuciones Kernel Density Estimation para todas las variables según clase.
 
 ---
 
-## 🗂 Archivos
-- `notebook.ipynb`: análisis completo.
-- `images/`: todas las gráficas del análisis.
-- `.gitignore`: configurado para ignorar archivos pesados como `creditcard.csv`.
+## 11. Importancia de las Variables (Modelo)
+
+<p align="center">
+  <img src="images/feature_importance.png" alt="Feature Importance" width="600"/>
+</p>
+
+> Importancia de las características utilizadas por el modelo (por ejemplo, XGBoost).
 
 ---
 
-## 📌 Notas
-El archivo `creditcard.csv` fue eliminado del repositorio debido a su tamaño (>100MB). Si necesitas trabajar con los datos, puedes descargarlo desde [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
+## 12. Matriz de Confusión
+
+<p align="center">
+  <img src="images/confusion_matrix.png" alt="Confusion Matrix" width="600"/>
+</p>
+
+> Matriz de confusión para evaluar el rendimiento del modelo de clasificación.
 
 ---
 
-## ✍ Autor
-Luis Buruato – [GitHub](https://github.com/LuisBuruato)
+## 📁 Carpeta `images/`
+
+Todos los gráficos están almacenados en la carpeta [`images/`](https://github.com/LuisBuruato/FRAUD_CREDIT_CARD/tree/main/images).
+
+---
+
+## 🚀 Autor
+
+**Luis Buruato**  
+📧 luisburuato@gmail.com  
+🔗 [GitHub](https://github.com/LuisBuruato)
