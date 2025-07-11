@@ -91,7 +91,6 @@ La combinación de gráficos estadísticos y modelos explicativos como XGBoost b
 **Luis Buruato**  
 📧 luisburuato@gmail.com  
 🔗 [GitHub](https://github.com/LuisBuruato)
-¿Quieres que te lo guarde como archivo README.md listo para subir al repositorio?
 
 
 
@@ -101,5 +100,6 @@ La combinación de gráficos estadísticos y modelos explicativos como XGBoost b
 
 
 
-Ask ChatGPT
+
+
 
