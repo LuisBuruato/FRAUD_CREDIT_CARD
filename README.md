@@ -1,137 +1,105 @@
-# 📊 Credit Card Fraud Detection
+# 💳 Credit Card Fraud Detection - Visualización de Resultados
 
-Este proyecto analiza transacciones de tarjetas de crédito para detectar fraudes utilizando técnicas de análisis exploratorio y modelos de Machine Learning. A continuación se presentan visualizaciones clave generadas durante el análisis.
-
----
-
-## 1. Distribución de Clases
-
-<p align="center">
-  <img src="images/class_distribution.png" alt="Class Distribution" width="600"/>
-</p>
-
-> Muestra el desbalance en las clases: 0 = No fraude, 1 = Fraude.
+Este proyecto tiene como objetivo identificar transacciones fraudulentas utilizando técnicas de análisis de datos y aprendizaje automático. A continuación se presentan las visualizaciones clave generadas durante el análisis. Estas gráficas permiten entender mejor los patrones presentes en los datos y el rendimiento del modelo de detección.
 
 ---
 
-## 2. Densidad de Tiempo
+## 📌 Gráficas Incluidas
 
-<p align="center">
-  <img src="images/time_density.png" alt="Time Density" width="600"/>
-</p>
+### 1. 📊 Matriz de Confusión
 
-> Distribución de tiempo de las transacciones para clases fraudulentas y no fraudulentas.
+![Confusion Matrix](images/confusion_matrix.png)
 
----
+> Esta matriz compara las predicciones del modelo con los valores reales.  
+> - **True Negatives (TN)**: Transacciones legítimas correctamente clasificadas.  
+> - **False Positives (FP)**: Transacciones legítimas clasificadas como fraude.  
+> - **False Negatives (FN)**: Transacciones fraudulentas no detectadas.  
+> - **True Positives (TP)**: Fraudes correctamente identificados.
 
-## 3. Monto Total por Hora
-
-<p align="center">
-  <img src="images/total_amount.png" alt="Total Amount per Hour" width="600"/>
-</p>
-
-> Línea de tiempo del monto total de transacciones por hora, separadas por clase.
+Una matriz balanceada con un alto número de verdaderos positivos y negativos indica un buen rendimiento del modelo.
 
 ---
 
-## 4. Monto Máximo por Hora
+### 2. 📈 Distribución de Variables por Clase
 
-<p align="center">
-  <img src="images/max_amount.png" alt="Maximum Amount" width="600"/>
-</p>
+![Distributions by Class](images/distributions_by_class.png)
 
-> Gráfico de línea que representa el monto máximo de transacciones por hora.
-
----
-
-## 5. Diagrama de Caja (Boxplot) del Monto
-
-<p align="center">
-  <img src="images/boxplot_amount.png" alt="Boxplot Amount" width="600"/>
-</p>
-
-> Boxplot de los montos de transacciones por clase, con y sin outliers.
+> Muestra la densidad de cada variable del dataset, separadas por clase (`0` = No fraude, `1` = Fraude).  
+> Permite observar qué variables presentan diferencias significativas en su distribución, lo cual es útil para la selección de características.
 
 ---
 
-## 6. Monto de Transacciones Fraudulentas
+### 3. 🔥 Correlación entre Variables
 
-<p align="center">
-  <img src="images/fraud_amount.png" alt="Fraud Scatter" width="600"/>
-</p>
+![Feature Correlation](images/feature_correlation.png)
 
-> Gráfico de dispersión del monto de las transacciones fraudulentas a lo largo del tiempo.
-
----
-
-## 7. Mapa de Calor de Correlaciones
-
-<p align="center">
-  <img src="images/correlation_heatmap.png" alt="Correlation Heatmap" width="600"/>
-</p>
-
-> Matriz de correlación de todas las variables del dataset.
+> Mapa de calor (heatmap) de correlación entre todas las variables del conjunto de datos.  
+> Ayuda a identificar relaciones lineales fuertes entre variables, lo cual puede afectar ciertos modelos o ser aprovechado para ingeniería de características.
 
 ---
 
-## 8. lmplot: V20 vs Amount
+### 4. 💡 Importancia de Variables (Modelo Base)
 
-<p align="center">
-  <img src="images/lmplot_v20_amount.png" alt="lmplot V20 vs Amount" width="600"/>
-</p>
+![Feature Importances](images/feature_importances.png)
 
-> Relación entre la variable V20 y el monto, diferenciada por clase.
-
----
-
-## 9. lmplot: V7 vs Amount
-
-<p align="center">
-  <img src="images/lmplot_v7_amount.png" alt="lmplot V7 vs Amount" width="600"/>
-</p>
-
-> Relación entre la variable V7 y el monto, diferenciada por clase.
+> Muestra qué variables fueron más relevantes para el modelo.  
+> Una alta importancia significa que esa variable tiene mayor poder predictivo para clasificar correctamente las transacciones.
 
 ---
 
-## 10. Distribución KDE de todas las variables
+### 5. 🔍 lmplot V20 vs Amount
 
-<p align="center">
-  <img src="images/kde_features.png" alt="KDE Features" width="600"/>
-</p>
+![V20 vs Amount](images/v20_amount_lmplot.png)
 
-> Distribuciones Kernel Density Estimation para todas las variables según clase.
-
----
-
-## 11. Importancia de las Variables (Modelo)
-
-<p align="center">
-  <img src="images/feature_importance.png" alt="Feature Importance" width="600"/>
-</p>
-
-> Importancia de las características utilizadas por el modelo (por ejemplo, XGBoost).
+> Gráfico de dispersión con regresión lineal de la variable `V20` respecto al monto de transacción (`Amount`).  
+> Diferenciado por clase (color), se pueden observar posibles patrones distintos entre transacciones fraudulentas y no fraudulentas.
 
 ---
 
-## 12. Matriz de Confusión
+### 6. 🔍 lmplot V7 vs Amount
 
-<p align="center">
-  <img src="images/confusion_matrix.png" alt="Confusion Matrix" width="600"/>
-</p>
+![V7 vs Amount](images/v7_amount_lmplot.png)
 
-> Matriz de confusión para evaluar el rendimiento del modelo de clasificación.
-
----
-
-## 📁 Carpeta `images/`
-
-Todos los gráficos están almacenados en la carpeta [`images/`](https://github.com/LuisBuruato/FRAUD_CREDIT_CARD/tree/main/images).
+> Similar al anterior, muestra la relación entre `V7` y `Amount`.  
+> Permite identificar si existe una correlación lineal útil para distinguir entre clases.
 
 ---
 
-## 🚀 Autor
+### 7. 🌲 Importancia de Características - XGBoost
+
+![XGBoost Feature Importance](images/xgboost_feature_importance.png)
+
+> Visualiza la importancia de las variables calculada por el modelo **XGBoost**, uno de los algoritmos más potentes para clasificación.  
+> Variables con mayor puntuación fueron clave en la toma de decisiones del modelo.
+
+---
+
+## 📌 Conclusión
+
+Estas visualizaciones permiten:
+
+- **Comprender mejor la naturaleza del dataset**, incluyendo la distribución de variables y su relevancia para la predicción de fraude.
+- **Evaluar el rendimiento del modelo**, principalmente a través de la matriz de confusión.
+- **Identificar variables clave** que podrían utilizarse en futuras optimizaciones o como parte de una explicación interpretable del modelo.
+
+La combinación de gráficos estadísticos y modelos explicativos como XGBoost brinda una visión completa del proceso de detección de fraude.
+
+---
+
+## 👨‍💻 Autor
 
 **Luis Buruato**  
 📧 luisburuato@gmail.com  
 🔗 [GitHub](https://github.com/LuisBuruato)
+¿Quieres que te lo guarde como archivo README.md listo para subir al repositorio?
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
+
