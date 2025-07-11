@@ -7,7 +7,7 @@ Este proyecto presenta un análisis exploratorio y visual de datos de transaccio
 ## 📊 Visualizaciones
 
 ### 1. **Distribución de Clases**
-![Class Distribution](images/class_distribution.png)
+[![Class Distribution](images/class_distribution.png)](https://github.com/LuisBuruato/FRAUD_CREDIT_CARD/blob/main/images/class_distribution.png)
 Muestra el desbalance de clases entre transacciones legítimas (0) y fraudulentas (1).
 
 ---
